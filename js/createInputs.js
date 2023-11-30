@@ -22,7 +22,7 @@ export function createInputNote(items) {
   inputNote.setAttribute("type", "number");
   inputNote.setAttribute("min", "0");
   inputNote.setAttribute("max", "5");
-  inputNote.setAttribute("step", "0.01");
+  inputNote.setAttribute("step", "0.001");
   inputNote.setAttribute("name", `matter-note${items + 1}`);
   inputNote.setAttribute("class", "matter-note");
   inputNote.setAttribute("placeholder", "Nota");
