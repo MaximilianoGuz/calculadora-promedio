@@ -81,7 +81,20 @@ input:focus {
   font-size: 18px;
   font-weight: bold;
   color: #fff;
-  background-color: #0075DA;
+  background-color: #0075da;
+}
+
+.average {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.average.approved {
+  color: #d60000;
+}
+
+.average.disapproved {
+  color: #3cb500;
 }
 
 @media screen and (max-width: 700px) {
@@ -95,5 +108,20 @@ input:focus {
 
   th {
     font-size: 15px;
+  }
+}
+@media screen and (max-width: 655px) {
+  h1 {
+    font-size: 28px;
+  }
+  .add-matter,
+  .delete-matter {
+    display: block;
+    width: 100%;
+    min-width: 25px;
+    margin: 0;
+  }
+  .add-matter {
+    margin-bottom: 5px;
   }
 }

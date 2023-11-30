@@ -3,6 +3,8 @@ export function createInputCredits(items) {
 
   const inputCredits = document.createElement("input");
   inputCredits.setAttribute("type", "number");
+  inputCredits.setAttribute("min", "0");
+  inputCredits.setAttribute("max", "5");
   inputCredits.setAttribute("name", `matter-credits${items + 1}`);
   inputCredits.setAttribute("class", "matter-credits");
   inputCredits.setAttribute("placeholder", "Numero de creditos");
@@ -18,6 +20,9 @@ export function createInputNote(items) {
 
   const inputNote = document.createElement("input");
   inputNote.setAttribute("type", "number");
+  inputNote.setAttribute("min", "0");
+  inputNote.setAttribute("max", "5");
+  inputNote.setAttribute("step", "0.01");
   inputNote.setAttribute("name", `matter-note${items + 1}`);
   inputNote.setAttribute("class", "matter-note");
   inputNote.setAttribute("placeholder", "Nota");
