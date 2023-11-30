@@ -1,0 +1,99 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+h1 {
+  text-align: center;
+  margin: 30px 0;
+}
+
+form {
+  width: 80vw;
+  max-width: 700px;
+  padding: 20px 20px;
+  /* box-sizing: border-box; */
+  text-align: center;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+tr th,
+tr td {
+  border: 1px solid #ccc;
+  padding: 15px;
+  text-align: center;
+}
+
+input {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #aaa;
+  width: 80%;
+}
+
+input:focus {
+  outline: none;
+  box-shadow: 0 0 5px #00b3ff;
+}
+
+.add-matter,
+.delete-matter {
+  width: 45%;
+  height: 30px;
+  font-size: 15px;
+  font-weight: 900;
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+}
+
+.add-matter {
+  background-color: #49c116;
+  margin-right: 5px;
+}
+
+.delete-matter {
+  background-color: #d70000;
+}
+
+.add-matter:hover,
+.delete-matter:hover {
+  filter: brightness(110%);
+}
+
+.calculate {
+  width: 100px;
+  height: 50px;
+  padding: 10px;
+  margin: 40px 0;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #0075DA;
+}
+
+@media screen and (max-width: 700px) {
+  h1 {
+    font-size: 30px;
+  }
+  form {
+    width: 95vw;
+    padding: 20px 0;
+  }
+
+  th {
+    font-size: 15px;
+  }
+}
