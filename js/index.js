@@ -55,6 +55,8 @@ formToGetData.addEventListener("submit", (e) => {
     pOfTheAverage.classList.remove("approved");
     pOfTheAverage.classList.add("disapproved");
   }
+
+  pOfTheAverage.scrollIntoView({ behavior: "smooth", block: "center" });
 });
 
 createNewImputs();
