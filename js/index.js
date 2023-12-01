@@ -4,6 +4,20 @@ import { createButtons } from "./createButtons.js";
 var formToGetData = document.getElementById("form-data");
 var formContainer = formToGetData.firstElementChild;
 
+var cleanButton = document.getElementsByClassName("clean")[0];
+
+cleanButton.addEventListener("click", (e) => {
+  if (!confirm("¿Estás seguro que quieres limpiar los datos?")) return;
+
+  document.getElementsByClassName("container")[0].innerHTML = `
+  <tr>
+    <th>Num. créditos</th>
+    <th>Nota</th>
+    <th></th>
+  </tr>`;
+  createNewImputs();
+});
+
 formToGetData.addEventListener("submit", (e) => {
   e.preventDefault();
   // const data = Object.fromEntries(new FormData(e.target));
@@ -18,7 +32,7 @@ formToGetData.addEventListener("submit", (e) => {
   let instantPercent = 0;
 
   data.forEach((values, key) => {
-    if (key.startsWith("matter-cred")) sumCredits += parseFloat(values);
+    if (key.startsWith("matter-cred")) sumCredits += parseInt(values);
   });
 
   data.forEach((values, key) => {
@@ -38,7 +52,7 @@ formToGetData.addEventListener("submit", (e) => {
     pOfTheAverage.classList.remove("disapproved");
     pOfTheAverage.classList.add("approved");
   } else {
-    pOfTheAverage.classList.remove("approved")
+    pOfTheAverage.classList.remove("approved");
     pOfTheAverage.classList.add("disapproved");
   }
 });
