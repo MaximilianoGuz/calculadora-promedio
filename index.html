@@ -18,13 +18,30 @@
   </head>
   <body>
     <header>
-      <h1>Calculadora de promedio por créditos</h1>
+      <!-- Hidden nav with label connect to input with an icon menu -->
+      
       <nav>
+        <input type="checkbox" id="check" />
+        <div class="logo">
+          <a href="index.html"><i class="fas fa-calculator"></i></a>
+        </div>
+        <label for="check">
+          <i class="fas fa-bars" id="btn"></i>
+          <i class="fas fa-times" id="cancel"></i>
+        </label>
         <ul>
-          <li>Por créditos</li>
-          <li>Por porcentaje</li>
+          <li>
+            <a href="index.html">Ponderado semestre</a>
+          </li>
+          <li>
+            <a href="#">Ponderado calificado</a>
+          </li>
+          <li>
+            <a href="#">Nota por porcentaje</a>
+          </li>
         </ul>
       </nav>
+      <h1>Calculadora de ponderado semestral</h1>
     </header>
     <main>
       <form class="matters-list" id="form-data">
@@ -35,16 +52,19 @@
             <th></th>
           </tr>
         </table>
-  
-        <input type="submit" value="Calcular" class="calculate" />
-        <input type="button" value="Limpiar" class="clean" />
-  
+
+        <div class="buttons-forms-container">
+          <button type="submit" title="Calcular promedio" class="buttons-form calculate">Calcular</button>
+          <button type="button" title="Limpiar los campos de las materias" class="buttons-form clean">Limpiar</button>
+          <button type="button" title="Añadir campo" class="buttons-form add-matter">Añadir</button>
+        </div>
+
         <p class="average">Promedio: <span id="total-average">0.0</span></p>
       </form>
     </main>
 
     <footer><p>Hecho por Maximiliano Guzmán R.</p></footer>
 
-    <script src="js/index.js" type="module"></script>
+    <script src="js/averageSemester.js" type="module"></script>
   </body>
 </html>

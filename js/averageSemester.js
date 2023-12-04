@@ -1,31 +1,36 @@
-import { createInputCredits, createInputNote } from "./createInputs.js";
-import { createButtons } from "./createButtons.js";
+import { createInput } from "./createInputs.js";
+import { createDeleteButton } from "./createButtons.js";
 
-var formToGetData = document.getElementById("form-data");
-var formContainer = formToGetData.firstElementChild;
+const formToGetData = document.getElementById("form-data");
+const formContainer = formToGetData.firstElementChild;
 
-var cleanButton = document.getElementsByClassName("clean")[0];
+const cleanButton = document.getElementsByClassName("clean")[0];
+const addButton = document.getElementsByClassName("add-matter")[0];
 
 cleanButton.addEventListener("click", (e) => {
   if (!confirm("¿Estás seguro que quieres limpiar los datos?")) return;
 
   document.getElementsByClassName("container")[0].innerHTML = `
-  <tr>
-    <th>Num. créditos</th>
-    <th>Nota</th>
-    <th></th>
-  </tr>`;
+    <tr>
+      <th>Num. créditos</th>
+      <th>Nota</th>
+      <th></th>
+    </tr>
+  `;
   createNewImputs();
+  formContainer.scrollIntoView({ behavior: "smooth", block: "end" });
+});
+
+addButton.addEventListener("click", (e) => {
+  if (document.querySelectorAll(".container-matter").length <= 19)
+    createNewImputs();
 });
 
 formToGetData.addEventListener("submit", (e) => {
   e.preventDefault();
-  // const data = Object.fromEntries(new FormData(e.target));
-
   const data = new FormData(e.target);
-
-  let spanOfTheTotalAverage = document.getElementById("total-average");
-  let pOfTheAverage = document.getElementsByClassName("average")[0];
+  const spanOfTheTotalAverage = document.getElementById("total-average");
+  const pOfTheAverage = document.getElementsByClassName("average")[0];
 
   let total = 0;
   let sumCredits = 0;
@@ -67,9 +72,28 @@ function createNewImputs() {
 
   const items = document.querySelectorAll(".container-matter").length;
 
-  const tdCredits = createInputCredits(items);
-  const tdNote = createInputNote(items);
-  const tdButtons = createButtons(trContainer, formContainer, createNewImputs);
+  let attributes = {
+    type: "number",
+    min: "0",
+    max: "5",
+    name: `matter-credit${items + 1}`,
+    placeholder: "Numero de creditos",
+    required: "true",
+  };
+  const tdCredits = createInput(attributes);
+
+  attributes = {
+    type: "number",
+    min: "0",
+    max: "5",
+    step: "0.001",
+    name: `matter-note${items + 1}`,
+    placeholder: "Nota",
+    required: "true",
+  };
+  const tdNote = createInput(attributes);
+
+  const tdButtons = createDeleteButton(trContainer, formContainer);
 
   trContainer.appendChild(tdCredits);
   trContainer.appendChild(tdNote);
@@ -77,5 +101,3 @@ function createNewImputs() {
 
   formContainer.appendChild(trContainer);
 }
-
-function calculateProm(data) {}

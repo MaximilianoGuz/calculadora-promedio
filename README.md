@@ -1,4 +1,11 @@
-
 # Calculadora de promedio por créditos
 
-Es una calculadora hecha para calcular el promedio para materias que están calificadas por el valor de créditos diferentes.
+Esta calculadora está hecha para calcular diferentes métodos de calificación:
+
+- Calcular el Ponderado Semestral
+- Calculadora de Ponderado Total
+- Calculadora de Notas por Porcentajes
+
+Para ingresar a la página por favor [Dar click aquí](https://maximilianoguz.github.io/calculadora-promedio/)
+
+![Imagen de previsualización de la página](/assets/preview-page.png)
