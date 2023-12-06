@@ -5,7 +5,7 @@ import { createAddEventListeners } from "./addEventListeners.js";
 const formToGetData = document.getElementById("form-data");
 const formContainer = formToGetData.firstElementChild;
 
-createAddEventListeners(createNewImputs, calculateAverageSemester);
+createAddEventListeners(createNewImputs, calculateAverageTotal);
 createNewImputs();
 
 function createNewImputs() {
@@ -17,7 +17,7 @@ function createNewImputs() {
   let attributes = {
     type: "number",
     min: "0",
-    max: "5",
+    max: "20",
     name: `matter-credit${items + 1}`,
     placeholder: "Numero de creditos",
     required: "true",
@@ -44,7 +44,7 @@ function createNewImputs() {
   formContainer.appendChild(trContainer);
 }
 
-function calculateAverageSemester(data) {
+function calculateAverageTotal(data) {
   const spanOfTheTotalAverage = document.getElementById("total-average");
   const pOfTheAverage = document.getElementsByClassName("average")[0];
 

@@ -41,9 +41,18 @@
           </li>
         </ul>
       </nav>
-      <h1>Calculadora de Ponderado Semestral</h1>
+      <h1>Calculadora de Notas por Porcentajes</h1>
     </header>
     <main>
+      <dialog>
+        <div class="dialog-container">
+          <p class="dialog-message">
+            La suma total de porcentajes ingresados no es igual al 100%, por
+            favor revise de nuevo.
+          </p>
+          <button class="dialog-button">Aceptar</button>
+        </div>
+      </dialog>
       <form class="matters-list" id="form-data">
         <table class="container">
           <tr>
@@ -95,6 +104,6 @@
       </p>
     </footer>
 
-    <script src="/js/averageSemester.js" type="module"></script>
+    <script src="/js/averagePercent.js" type="module"></script>
   </body>
 </html>
